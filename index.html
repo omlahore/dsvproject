@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Twitter Analytics Dashboard</title>
+    <style>
+        /* Common styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: url('background.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        #dashboard {
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.6);
+            border-radius: 10px;
+            margin: 30px auto;
+            max-width: 400px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+        #dashboard h1 {
+            font-size: 28px;
+        }
+        button {
+            background-color: #1DA1F2;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0F7CC0;
+        }
+        #image-container {
+            display: none;
+            margin: 20px 0;
+        }
+        #screenshot {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+
+        /* Responsive styles for screens with a maximum width of 768px */
+        @media (max-width: 768px) {
+            #dashboard {
+                max-width: 90%;
+            }
+            button {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="dashboard">
+        <h1>Twitter Analytics Dashboard</h1>
+        <button id="june-button">June</button>
+        <button id="july-button">July</button>
+        <button id="august-button">August</button>
+        <button id="september-button">September</button>
+        <button id="october-button">October</button>
+    </div>
+
+    <div id="image-container">
+        <img id="screenshot" src="" alt="Screenshot">
+    </div>
+
+    <script>
+        // JavaScript (unchanged)
+        const juneButton = document.getElementById("june-button");
+        const julyButton = document.getElementById("july-button");
+        const augustButton = document.getElementById("august-button");
+        const septemberButton = document.getElementById("september-button");
+        const octoberButton = document.getElementById("october-button");
+        const imageContainer = document.getElementById("image-container");
+        const screenshot = document.getElementById("screenshot");
+
+        juneButton.addEventListener("click", () => showImage("june.png"));
+        julyButton.addEventListener("click", () => showImage("july.png"));
+        augustButton.addEventListener("click", () => showImage("august.png"));
+        septemberButton.addEventListener("click", () => showImage("september.png"));
+        octoberButton.addEventListener("click", () => showImage("october.png"));
+
+        function showImage(imagePath) {
+            imageContainer.style.display = "block";
+            screenshot.src = imagePath;
+        }
+    </script>
+</body>
+</html>
